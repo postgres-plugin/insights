@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS insights (
   creator_id INTEGER REFERENCES people (id),
   date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
   active BOOLEAN NOT NULL,
-  resources BOOLEAN NOT NULL
+  resource BOOLEAN NOT NULL
 );
 
 -- Create table
