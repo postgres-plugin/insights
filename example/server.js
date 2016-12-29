@@ -89,6 +89,19 @@ function init (config, callback) {
             return callback(errorInsights, server, pool);
           }
 
+          server.route([
+            {
+              method: 'GET',
+              path: '/',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.getAll(request.query.active, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'get all insights failed');
+                  reply(response);
+                });
+              }
+            }
+          ]);
+
           return server.start(function (errorStart) {
             return callback(errorStart, server, pool);
           });
