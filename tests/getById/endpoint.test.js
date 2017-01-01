@@ -28,6 +28,7 @@ test('/getById: active insight', function (t) {
           author: 'Kamala Khan',
           creator_id: 1,
           active: true,
+          resource: true,
           tags: [ {
             id: 8,
             name: 'Agriculture'

@@ -3,7 +3,7 @@
 var test = require('tape');
 var getById = require('../../lib/queries/getById.js');
 
-var getById = 'SELECT'
+var query = 'SELECT'
   + ' insights.id AS id,'
   + ' insights.title AS title,'
   + ' insights.url AS url,'
@@ -15,7 +15,7 @@ var getById = 'SELECT'
   + ' insights.resource AS resource,'
   + ' tags.id AS tags_id,'
   + ' tags.name AS tags_name'
-  + ' FROM insights',
+  + ' FROM insights'
   + ' LEFT OUTER JOIN tags_insights'
   + ' ON (tags_insights.insights_id = insights.id)'
   + ' LEFT OUTER JOIN tags'
@@ -25,7 +25,6 @@ var getById = 'SELECT'
   + ' tags_name ASC;'
 
 test('Get insight by id', function (t) {
-  var query = getById(1);
-  t.equal(query, activeInsights, 'Query to get an insight and associated tags, is returns correctly');
+  t.equal(query, getById(1), 'Query to get an insight and associated tags, is returns correctly');
   t.end();
 });
