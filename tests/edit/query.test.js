@@ -22,8 +22,7 @@ var query = [
   'author = \'P Diffy\',',
   'org_id = null,',
   'creator_id = 1,',
-  'resource = false,',
-  'active = false',
+  'resource = false',
   'WHERE id = ' + insightId + ' ;'
 ].join(' ');
 
