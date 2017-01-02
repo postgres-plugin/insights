@@ -1,8 +1,8 @@
 'use strict';
 
 var test = require('tape');
-var init = require('../../../example/server.js');
-var config = require('../../../config/load-config.js');
+var init = require('../../example/server.js');
+var config = require('../../config/load-config.js');
 
 var activeInsight = 1;
 var inactiveInsight = 2;
