@@ -26,7 +26,7 @@ test('getAll endpoint returns all insights', function (t) {
 
     return server.inject(getAll(false), function (res) {
       t.equal(res.result.insights.length, 3, 'all 3 insights returned');
-      t.equal(res.result.insights[2].active, false, 'inactive insight also returned');
+      t.equal(res.result.insights[1].active, false, 'inactive insight also returned');
 
       return pool.end(function () {
         server.stop(t.end);
