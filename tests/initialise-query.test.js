@@ -32,7 +32,7 @@ test('Create intialise query with reset = true', function (t) {
       creator_id: '1',
       org_id: null,
       active: true,
-      resources: true
+      resource: true
     }
   ];
   var tagsInsights = [

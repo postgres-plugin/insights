@@ -13,7 +13,7 @@ test('Convert array of insights to sql query', function (t) {
       creator_id: '1',
       org_id: null,
       active: true,
-      resources: true
+      resource: true
     }
   ];
   var query = insightsData(insights);
@@ -27,7 +27,7 @@ test('Convert array of insights to sql query', function (t) {
     'creator_id,',
     'org_id,',
     'active,',
-    'resources',
+    'resource',
     ')',
     'VALUES',
     '(',
@@ -42,6 +42,6 @@ test('Convert array of insights to sql query', function (t) {
     ');'
   ].join(' ');
 
-  t.deepEqual(query, expected, 'Query to add people is ok');
+  t.deepEqual(query, expected, 'Query to add insights is ok');
   t.end();
 });
