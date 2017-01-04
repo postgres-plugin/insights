@@ -1,0 +1,54 @@
+{
+  "name": "pg-insights",
+  "version": "0.0.3",
+  "description": "Reusable insight-system built with Postgres and Hapi.",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node ./example/start.js",
+    "startmon": "nodemon ./example/start.js",
+    "lint": "node_modules/.bin/goodparts .",
+    "coverage": "istanbul check-coverage",
+    "test": "NODE_ENV=test istanbul cover tape ./tests/**/*.test.js | node_modules/tap-spec/bin/cmd.js",
+    "db": "NODE_ENV=test node ./fixtures/mock-data-runner.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/postgres-plugin/insights.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/postgres-plugin/insights/issues"
+  },
+  "homepage": "https://github.com/postgres-plugin/insights#readme",
+  "dependencies": {
+    "ce100-mock-data": "^1.0.4",
+    "tags-system": "^1.1.2",
+    "pg-challenges": "^2.0.4",
+    "pg-people": "0.0.24",
+    "env2": "^2.1.1",
+    "hapi": "^15.2.0",
+    "hoek": "^4.1.0",
+    "istanbul": "^0.4.5",
+    "pg": "^6.1.2",
+    "pg-escape": "^0.2.0",
+    "pg-helpers": "1.0.0",
+    "tape": "^4.6.3"
+  },
+  "devDependencies": {
+    "goodparts": "^1.1.4",
+    "nodemon": "^1.11.0",
+    "pre-commit": "^1.1.3",
+    "tags-system": "^1.1.7",
+    "tap-spec": "^4.1.1"
+  },
+  "engines": {
+    "node": "^6.5.0"
+  },
+  "pre-commit": [
+    "lint",
+    "test",
+    "coverage"
+  ]
+}
