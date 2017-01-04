@@ -1,6 +1,6 @@
 {
   "name": "pg-insights",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Reusable insight-system built with Postgres and Hapi.",
   "main": "lib/index.js",
   "scripts": {
