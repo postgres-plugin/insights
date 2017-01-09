@@ -91,6 +91,15 @@ function init (config, callback) {
 
           server.route([
             {
+              method: 'POST',
+              path: '/add',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.add(request.payload, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'add insights failed');
+                  reply(response);
+                });
+              }
+            }, {
               method: 'GET',
               path: '/',
               handler: function (request, reply) {

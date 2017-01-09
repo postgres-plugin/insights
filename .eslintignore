@@ -1,0 +1,6 @@
+
+./node_modules/
+./coverage/
+./.env
+./.eslintrc.js
+./npm-debug.log
