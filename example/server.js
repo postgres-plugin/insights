@@ -99,6 +99,33 @@ function init (config, callback) {
                   reply(response);
                 });
               }
+            }, {
+              method: 'GET',
+              path: '/getById',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.getById(request.query.id, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'getById failed');
+                  reply(response);
+                });
+              }
+            }, {
+              method: 'POST',
+              path: '/add',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.add(request.payload, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'add insights failed');
+                  reply(response);
+                });
+              }
+            }, {
+              method: 'GET',
+              path: '/',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.browse(request.query.active, request.query.id, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'get all insights failed');
+                  reply(response);
+                });
+              }
             }
           ]);
 
