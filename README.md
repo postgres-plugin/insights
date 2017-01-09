@@ -26,6 +26,7 @@ The insight details take the following format:
   date: 2016-12-23T11:27:41.760Z,
   title: 'Insight Number 1',
   url: 'https://....',
+  active: true,
   tags: [
   {
     tag_id: 8,
@@ -77,6 +78,7 @@ If a tag id is given, returns:
     date: 2016-12-23T11:27:41.760Z,
     title: 'Insight Number 1',
     url: 'https://....',
+    active: true,
     tags: [
     {
       tag_id: 8,
