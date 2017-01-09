@@ -16,7 +16,7 @@ var allInsights = 'SELECT '
   + 'FROM insights '
   + 'LEFT JOIN tags_insights ON (insights.id = tags_insights.insights_id) '
   + 'LEFT JOIN tags ON (tags.id = tags_insights.tags_id) '
-  + 'ORDER BY date, '
+  + 'ORDER BY date DESC, '
   + 'tags.name ASC;'
 
 var activeInsights = 'SELECT '
@@ -33,7 +33,7 @@ var activeInsights = 'SELECT '
   + 'LEFT JOIN tags_insights ON (insights.id = tags_insights.insights_id) '
   + 'LEFT JOIN tags ON (tags.id = tags_insights.tags_id) '
   + 'WHERE insights.active = true '
-  + 'ORDER BY date, '
+  + 'ORDER BY date DESC, '
   + 'tags.name ASC;'
 
 test('Get all insights', function (t) {
