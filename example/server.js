@@ -91,6 +91,15 @@ function init (config, callback) {
 
           server.route([
             {
+              method: 'POST',
+              path: '/edit',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.edit(request.query.id, request.payload, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'edit insight failed');
+                  reply(response);
+                });
+              }
+            }, {
               method: 'GET',
               path: '/getById',
               handler: function (request, reply) {
