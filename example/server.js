@@ -99,6 +99,15 @@ function init (config, callback) {
                   reply(response);
                 });
               }
+            }, {
+              method: 'GET',
+              path: '/',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.browse(request.query.active, request.query.id, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'get all insights failed');
+                  reply(response);
+                });
+              }
             }
           ]);
 
