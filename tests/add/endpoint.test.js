@@ -39,8 +39,8 @@ test('/add endpoint', function (t) {
       insightId = res.result[0].id;
       return server.inject(getAll, function (res) {
         t.equal(res.result.insights.length, insightId, 'ID of new insight === the total number of insights');
-        t.equal(res.result.insights[insightId - 1].title, insight.title, 'title of new insight is displayed in Browse view');
-        t.equal(res.result.insights[insightId - 1].url, insight.url, 'url of new insight is displayed in Browse view');
+        t.equal(res.result.insights[0].title, insight.title, 'title of new insight is displayed in Browse view');
+        t.equal(res.result.insights[0].url, insight.url, 'url of new insight is displayed in Browse view');
 
         return pool.end(function () {
           server.stop(t.end);
