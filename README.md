@@ -1,6 +1,5 @@
 # Insights
 
-
 [![Build Status](https://travis-ci.org/postgres-plugin/insights.svg?branch=master)](https://travis-ci.org/postgres-plugin/insights)
 [![codecov](https://codecov.io/gh/postgres-plugin/insights/branch/master/graph/badge.svg)](https://codecov.io/gh/postgres-plugin/insights)
 
@@ -97,3 +96,8 @@ If `false` is given, returns the same shape, but with
 ```
 filter_tag: undefined
 ```
+
+
+### _toggle(insightId, cb)_
+function to set an existing insight to be `active` or `inactive`.
+`insightId` specifies the ID of the insight to toggle.

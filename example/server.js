@@ -91,6 +91,15 @@ function init (config, callback) {
 
           server.route([
             {
+              method: 'GET',
+              path: '/toggleActive',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.toggleActive(request.query.id, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'toggleActive failed');
+                  reply(response);
+                });
+              }
+            }, {
               method: 'POST',
               path: '/edit',
               handler: function (request, reply) {
