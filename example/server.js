@@ -10,7 +10,7 @@ var people = require('pg-people');
 var insights = require('../lib/index.js');
 
 // pg tables data
-var data = require('ce100-mock-data');
+var data = require('../../../mock-data/index.js');
 
 function init (config, callback) {
   var server = new Hapi.Server();

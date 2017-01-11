@@ -10,7 +10,7 @@ var insight = {
   title: "Handbook",
   url: 'http://www.scottrao.com/Rao-Barista.pdf',
   author: 'P Diffy',
-  doctype: '.pdf',
+  type: 'Report',
   resource: false
 };
 

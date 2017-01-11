@@ -27,7 +27,7 @@ test('Create intialise query with reset = true', function (t) {
     {
       title: 'Insight Number 4',
       url: 'https://www.ellenmacarthurfoundation.org/assets/downloads/ce100/Reverse-Logistics.pdf',
-      doctype: '.pdf',
+      type: 'Report',
       author: 'EMF',
       creator_id: '1',
       org_id: null,
