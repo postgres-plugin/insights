@@ -3,7 +3,10 @@ CREATE TABLE IF NOT EXISTS insights (
   id SERIAL PRIMARY KEY,
   title VARCHAR(100) NOT NULL,
   url TEXT,
-  doctype VARCHAR(10) NOT NULL CHECK (doctype IN ('.pdf', '.png', '.jpeg')),
+  type VARCHAR(30) NOT NULL
+  CHECK (type IN
+  ('CASE STUDY', 'PAPER', 'PRESENTATION', 'REPORT', 'VIDEO', 'WORKSHOP SUMMARY')
+  ),
   author VARCHAR(50),
   org_id INTEGER REFERENCES organisations (id),
   creator_id INTEGER REFERENCES people (id),
