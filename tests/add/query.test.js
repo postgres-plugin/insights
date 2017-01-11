@@ -9,7 +9,7 @@ var insight = {
   title: "Handbook",
   url: 'http://www.scottrao.com/Rao-Barista.pdf',
   author: 'P Diffy',
-  type: 'Report',
+  type: 'REPORT',
   resource: false
 };
 
@@ -19,7 +19,7 @@ var extraColumns = {
   title: "Handbook",
   url: 'http://www.scottrao.com/Rao-Barista.pdf',
   author: 'P Diffy',
-  type: 'Report',
+  type: 'REPORT',
   resource: false,
   abc: 'alphabet',
   num: 'numbers'
@@ -28,7 +28,7 @@ var extraColumns = {
 var expected = 'INSERT INTO insights'
   + ' ( title, url, type, author, org_id, creator_id, resource, active )'
   + ' VALUES ( '
-  + "'Handbook', 'http://www.scottrao.com/Rao-Barista.pdf', 'Report', 'P Diffy',"
+  + "'Handbook', 'http://www.scottrao.com/Rao-Barista.pdf', 'REPORT', 'P Diffy',"
   + " null, 1, false, false"
   + ' ) RETURNING id;';
 

@@ -46,7 +46,7 @@ function to add a new insight, where `insightObj` takes the form:
 {
   title: 'Insight Title',
   url: 'www.ce100-insight-url.com',
-  type: 'Report',
+  type: 'REPORT',
   author: 'EMF',
   org_id: null,
   creator_id: 1,

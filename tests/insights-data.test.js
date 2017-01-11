@@ -8,7 +8,7 @@ test('Convert array of insights to sql query', function (t) {
     {
       title: 'Insight Number 4',
       url: 'https://www.ellenmacarthurfoundation.org/assets/downloads/ce100/Reverse-Logistics.pdf',
-      type: 'Report',
+      type: 'REPORT',
       author: 'EMF',
       creator_id: '1',
       org_id: null,

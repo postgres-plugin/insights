@@ -12,7 +12,7 @@ test('edit insight function', function (t) {
     title: "Insight 2",
     url: 'New Insight URL',
     author: 'P Diffy',
-    type: 'Report',
+    type: 'REPORT',
     org_id: null,
     creator_id: 1,
     active: false,

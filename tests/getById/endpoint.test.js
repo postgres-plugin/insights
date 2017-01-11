@@ -24,7 +24,7 @@ test('/getById: active insight', function (t) {
           id: 1,
           title: 'Insight Number 1',
           url: 'https://emf-packs.s3-eu-west-1.amazonaws.com/Growth%20Within%20-%20June%202015/EllenMacArthurFoundation_Growth%20Within_for%20print.pdf?AWSAccessKeyId=AKIAITAQSOURJ2COPP2A&Signature=exc0fbGigjcG88LlqNibztPX%2F3k%3D&Expires=1498468767',
-          type: 'Report',
+          type: 'REPORT',
           author: 'Kamala Khan',
           creator_id: 1,
           active: true,
