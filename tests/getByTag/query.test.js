@@ -29,7 +29,7 @@ var activeOnlyInsights = [
   'IN (',
   'SELECT insights_id as iid',
   'FROM tags_insights',
-  'WHERE tags_insights.tags_id = 22',
+  'WHERE  tags_insights.tags_id = 22',
   ')',
   'OR tags.id = 22',
   'ORDER BY insights.date DESC,',
@@ -63,23 +63,23 @@ var inactiveInsights = [
   'IN (',
   'SELECT insights_id as iid',
   'FROM tags_insights',
-  'WHERE tags_insights.tags_id = 12',
+  'WHERE insights.active = true AND',
+  'tags_insights.tags_id = 12',
   ')',
   'OR tags.id = 12',
-  'WHERE insights.active = true',
   'ORDER BY insights.date DESC,',
   'insights.title ASC,',
   'tags.name ASC;'
 ].join(' ');
 
 test('Get all active insights with tag 22', function (t) {
-  var query = getByTag(22, false);
+  var query = getByTag(false, 22);
   t.equal(query, activeOnlyInsights, 'Query to get all insights (active and inactive) returns correctly');
   t.end();
 });
 
 test('Get all active and inactive insights with tag 12', function (t) {
-  var query = getByTag(12, true);
+  var query = getByTag(true, 12);
   t.equal(query, inactiveInsights, 'Query to get active insights returns correctly');
   t.end();
 });
