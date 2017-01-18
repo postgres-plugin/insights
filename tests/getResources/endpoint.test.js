@@ -5,12 +5,10 @@ var initServer = require('../../example/server.js');
 
 var config = require('../../config/load-config.js');
 
-function getResources () {
-  return {
-    method: 'GET',
-    url: '/resources'
-  };
-}
+var getResources = {
+  method: 'GET',
+  url: '/resources'
+};
 
 test('getResources endpoint returns all active resources', function (t) {
   initServer(config, function (err, server, pool) {
@@ -18,7 +16,7 @@ test('getResources endpoint returns all active resources', function (t) {
       return t.fail('Error starting the server, error: ', err);
     }
 
-    return server.inject(getResources(), function (res) {
+    return server.inject(getResources, function (res) {
       var expected = {
         id: 1,
         title: 'Insight Number 1',
@@ -26,6 +24,7 @@ test('getResources endpoint returns all active resources', function (t) {
         author: 'Kamala Khan',
         type: 'REPORT'
       };
+      t.equals(res.result.length, 1, 'All active resources displayed as expected');
       t.deepEquals(res.result[0], expected, 'Active resource correctly returned');
 
       return pool.end(function () {
