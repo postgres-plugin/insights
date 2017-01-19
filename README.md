@@ -101,3 +101,20 @@ filter_tag: undefined
 ### _toggle(insightId, cb)_
 function to set an existing insight to be `active` or `inactive`.
 `insightId` specifies the ID of the insight to toggle.
+
+### _getResources(cb)_
+function to return the details of all active resources.
+
+The resources take the following format:
+
+```js
+[{
+  id: 1,
+  title: 'Insight Number 1',
+  url: 'https://....',
+  author: 'Kamala Khan',
+  type: 'REPORT',
+  }, {
+  ...
+}]
+```
