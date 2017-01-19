@@ -135,6 +135,15 @@ function init (config, callback) {
                   reply(response);
                 });
               }
+            }, {
+              method: 'GET',
+              path: '/resources',
+              handler: function (request, reply) {
+                request.server.methods.pg.insights.getResources(function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'get all resources failed');
+                  reply(response);
+                });
+              }
             }
           ]);
 
