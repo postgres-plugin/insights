@@ -28,7 +28,7 @@ function activeOnlyReturned (array) {
   });
 }
 
-test('insights /getByTag: get all active and inactive tags with tagid = ' + filterTag, function (t) {
+test('insights /getByTag: get all active and inactive insights with tagid = ' + filterTag, function (t) {
   var expectedTags = [
     {
       tag_id: 8,
@@ -51,35 +51,21 @@ test('insights /getByTag: get all active and inactive tags with tagid = ' + filt
     }
 
     return server.inject(getByTag(false, filterTag), function (res) {
-      t.equal(
-        res.result.insights.length,
-        1,
-        'only 1 insight returned'
-      );
-      t.equal(
-        res.result.insights[0].title,
-        'Insight Number 1',
-        'correct insight title returned'
-      );
+      t.equal( res.result.insights.length, 1, 'only 1 insight returned' );
+
+      t.equal( res.result.insights[0].title, 'Insight Number 1', 'correct insight title returned' );
       t.equal(
         res.result.insights[0].url,
         'https://emf-packs.s3-eu-west-1.amazonaws.com/Growth%20Within%20-%20June%202015/EllenMacArthurFoundation_Growth%20Within_for%20print.pdf?AWSAccessKeyId=AKIAITAQSOURJ2COPP2A&Signature=exc0fbGigjcG88LlqNibztPX%2F3k%3D&Expires=1498468767',
         'correct insight url returned'
       );
-      t.equal(
-        res.result.insights[0].author,
-        'Kamala Khan',
-        'correct insight author returned'
-      );
-      t.deepEqual(
-        res.result.insights[0].tags,
-        expectedTags,
-        'correct insight author returned'
-      );
+      t.equal( res.result.insights[0].author, 'Kamala Khan', 'correct insight author returned' );
+      t.deepEqual( res.result.insights[0].tags, expectedTags, 'correct insight tags returned' );
+      t.equal( res.result.insights[0].type, 'REPORT', 'correct insight type returned' );
       t.deepEqual(
         res.result.filter,
         filterDetails,
-        'correct insight author returned'
+        'correct filter returned'
       );
       return pool.end(function () {
         server.stop(t.end);
