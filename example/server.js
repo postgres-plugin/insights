@@ -139,7 +139,7 @@ function init (config, callback) {
               method: 'GET',
               path: '/resources',
               handler: function (request, reply) {
-                request.server.methods.pg.insights.getResources(function (error, response) { // eslint-disable-line
+                request.server.methods.pg.insights.getResources(request.query.active, function (error, response) { // eslint-disable-line
                   Hoek.assert(!error, 'get all resources failed');
                   reply(response);
                 });
