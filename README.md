@@ -115,8 +115,11 @@ filter_tag: undefined
 function to set an existing insight to be `active` or `inactive`.
 `insightId` specifies the ID of the insight to toggle.
 
-### _getResources(cb)_
-function to return the details of all active resources.
+### _getResources(activeOnly, cb)_
+function to return the details of active and inactive resources.
+The `activeOnly` parameter is a Boolean. Set it to:
+  - `true` to return active insights only.
+  - `false` to return all active _and inactive_ insights.
 
 The resources take the following format:
 
@@ -127,7 +130,11 @@ The resources take the following format:
   url: 'https://....',
   author: 'Kamala Khan',
   type: 'REPORT',
+  active: true
   }, {
   ...
 }]
 ```
+
+Note that the `active` field is _not_ returned when `activeOnly` === true,
+as all resources returned will be active.
