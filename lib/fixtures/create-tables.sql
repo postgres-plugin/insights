@@ -1,7 +1,7 @@
 -- Create table
 CREATE TABLE IF NOT EXISTS insights (
   id SERIAL PRIMARY KEY,
-  title VARCHAR(100) NOT NULL,
+  title TEXT NOT NULL,
   url TEXT,
   type VARCHAR(30) NOT NULL
   CHECK (type IN
