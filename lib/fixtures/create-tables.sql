@@ -5,7 +5,16 @@ CREATE TABLE IF NOT EXISTS insights (
   url TEXT,
   type VARCHAR(30) NOT NULL
   CHECK (type IN
-  ('CASE STUDY', 'PAPER', 'PRESENTATION', 'REPORT', 'VIDEO', 'WORKSHOP SUMMARY')
+  (
+    'CASE STUDY',
+    'PAPER',
+    'PRESENTATION',
+    'REPORT',
+    'VIDEO',
+    'WORKSHOP SUMMARY',
+    'CO.PROJECT',
+    'IMAGE',
+    'LINK')
   ),
   author VARCHAR(50),
   org_id INTEGER REFERENCES organisations (id),
