@@ -1,6 +1,6 @@
 {
   "name": "pg-insights",
-  "version": "0.0.15",
+  "version": "0.1.1",
   "description": "Reusable insight-system built with Postgres and Hapi.",
   "main": "lib/index.js",
   "scripts": {
@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/postgres-plugin/insights#readme",
   "dependencies": {
-    "ce100-mock-data": "^1.0.4",
-    "tags-system": "^1.1.2",
-    "pg-challenges": "^2.0.4",
-    "pg-people": "0.0.24",
+    "ce100-mock-data": "^1.1.2",
+    "tags-system": "^1.1.7",
+    "pg-challenges": "^2.1.1",
+    "pg-people": "0.1.6",
     "env2": "^2.1.1",
     "hapi": "^15.2.0",
     "hoek": "^4.1.0",
