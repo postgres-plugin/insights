@@ -144,6 +144,17 @@ function init (config, callback) {
                   reply(response);
                 });
               }
+            }, {
+              method: 'GET',
+              path: '/insightsSearch',
+              handler: function (request, reply) {
+                var searchTerm = request.query.searchTerm;
+
+                request.server.methods.pg.insights.insightsSearch(searchTerm, function (error, response) { // eslint-disable-line
+                  Hoek.assert(!error, 'insightsSearch failed');
+                  reply(response);
+                });
+              }
             }
           ]);
 

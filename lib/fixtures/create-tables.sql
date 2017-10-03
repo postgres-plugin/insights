@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS insights (
     'IMAGE',
     'LINK')
   ),
-  author VARCHAR(50),
+  author TEXT,
   org_id INTEGER REFERENCES organisations (id),
   creator_id INTEGER REFERENCES people (id),
   date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
