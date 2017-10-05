@@ -8,6 +8,7 @@ test('search for insights containing searchTerm in title', function (t) {
   init(config, function (err, server, pool) {
     server.inject({ url: '/insightsSearch?searchTerm=insight number 3' }, function (res) {
       t.equal(res.result.length, 1, 'Insights Number 1 found');
+      t.equal(res.result[0].url, 'http://www.fantaproject.org/sites/default/files/resources/anthropometry-2003-ENG.pdf', 'url returned')
       t.end();
       pool.end();
       server.stop();
