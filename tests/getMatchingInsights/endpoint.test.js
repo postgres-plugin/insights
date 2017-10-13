@@ -25,3 +25,24 @@ test('get matching insights', function (t) {
     });
   });
 });
+
+test('matching insights return empty list if listOfTags empty', function (t) {
+  initServer(config, function (err, server, pool) {
+    if (err) {
+      return t.fail('Error starting the server, error: ', err);
+    }
+
+    var req = {
+      method: 'GET',
+      url: '/getMatchingInsights'
+    };
+
+    return server.inject(req, function (res) {
+      t.equal(res.result.length, 0, 'No insights');
+
+      return pool.end(function () {
+        server.stop(t.end);
+      });
+    });
+  });
+});

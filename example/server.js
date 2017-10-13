@@ -159,7 +159,7 @@ function init (config, callback) {
             method: 'GET',
             path: '/getMatchingInsights',
             handler: function (request, reply) {
-              var listOfTags = request.query.listOfTags;
+              var listOfTags = request.query.listOfTags || [];
 
               request.server.methods.pg.insights.getMatchingInsights(listOfTags, function (error, response) { // eslint-disable-line
                 Hoek.assert(!error, 'toggleActive failed');
