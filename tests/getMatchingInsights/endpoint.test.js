@@ -17,8 +17,7 @@ test('get matching insights', function (t) {
     };
 
     return server.inject(req, function (res) {
-      t.equal(res.result.length, 1, 'Matching one insight with the tag 38');
-
+      t.equal(res.result.length, 2, 'Matching 2 insight with the tag 38');
       return pool.end(function () {
         server.stop(t.end);
       });
