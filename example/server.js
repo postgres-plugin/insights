@@ -155,7 +155,18 @@ function init (config, callback) {
                   reply(response);
                 });
               }
+            }, {
+            method: 'GET',
+            path: '/getMatchingInsights',
+            handler: function (request, reply) {
+              var listOfTags = request.query.listOfTags || [];
+
+              request.server.methods.pg.insights.getMatchingInsights(listOfTags, function (error, response) { // eslint-disable-line
+                Hoek.assert(!error, 'toggleActive failed');
+                reply(response);
+              });
             }
+          }
           ]);
 
           return server.start(function (errorStart) {
